@@ -15,7 +15,7 @@ branches:
     - master
 language: python
 python: 
-  - "3.9.2"
+  - "3.9"
 services: "-sqlite3"
 ssh_known_hosts: 
   - 
