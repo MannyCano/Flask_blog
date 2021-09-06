@@ -8,8 +8,8 @@ before_install:
   - "chmod 600 deploy_key"
   - "echo -e \"Host {SERVER_IP}\\n\\tStrictHostKeyChecking no\\n\" >> ~/.ssh/config"
   - "ssh-add deploy_key"
-before_script: 
-  - "python init_db.py"
+#before_script: 
+ # - "python init_db.py"
 branches: 
   only: 
     - master
