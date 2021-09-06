@@ -5,7 +5,7 @@ before_install:
   - "openssl aes-256-cbc -K $encrypted_189e52c2c347_key -iv $encrypted_189e52c2c347_iv -in deploy_key.enc -out deploy_key -d"
   - "eval \"$(ssh-agent -s)\""
   - "chmod 600 deploy_key"
-  - "echo -e \"Host {SERVER_IP}\\n\\tStrictHostKeyChecking no\\n\" >> ~/.ssh/config"
+  - "echo -e \"Host 3.84.250.177\\n\\tStrictHostKeyChecking no\\n\" >> ~/.ssh/config"
   - "ssh-add deploy_key"
 
 deploy:
@@ -14,3 +14,7 @@ deploy:
   script: ssh root@3.84.250.177 'bash ./deploy.sh'
   on:
     branch: master
+
+language: python
+python:
+  - "3.9"
